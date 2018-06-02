@@ -19,14 +19,16 @@ First, we must define the following notation, a derivatives market can be modell
 
 1. A set of banks $B$ comprised of banks $(b_0,b_1,\dots b_n)$.
 1. A set of timesteps $T = (0,1,2,3,4,5,\dots,n)$; each timestep $t \in T$ represents a week during which derivatives trading occurs.
-1. A set of edges that comprise a directed graph $G$, $E = (e_0,e_1, \dots e_n)$; each edge $e_i =(b_j,b_k)$ of weight $w$ represents an debt owed of $w$ million euros from bank $b_j$ to bank $b_k$.
+1. A set of edges for every timestep $t$ that comprise a directed graph $G_t$, $E_t = (e_{t0},e_{t1}, \dots e_{tn})$; each edge $e_{ti} =(b_j,b_k)$ is of weight $w_t$, which represents an debt owed of $w$ million euros from bank $b_j$ to bank $b_k$ at timestep $t$.
 1. An "arrival" of an edge is defined as one of two events:
-    1. The origination of an edge $e_i =(b_j,b_k)$ that did not exist in prior timesteps.
-    1. The increase of the weight $w$ of an edge $e_i$ that had existed in prior timesteps.
-1. The total notional of a derivatives contract graph $G$ is equivalent to:
-$$\sum_{\forall i \in B} \sum_{\forall j \in B} w(b_i,b_j)$$
+    1. The origination of an edge $e_ti =(b_j,b_k)$ that did not exist in prior timesteps.
+    1. The increase of the weight $w$ of an edge $e_ti$ that had existed in prior timesteps.
+1. The total notional of a derivatives contract graph $G_t$ is equivalent to:
 
-Where $w(b_i,b_j)$ is a function that returns the weight $w$ of the edge defined as a derivative contract relationship between bank $i$ and bank $j$.
+
+$$\sum_{\forall i \in B} \sum_{\forall j \in B} w_t(b_i,b_j)$$
+
+Where $w_t(b_i,b_j)$ is a function that returns the weight $w$ of the edge defined as a derivative contract relationship between bank $i$ and bank $j$ at timestep $t$.
 
 Minimizing total notional at a given timestep $t$ is a solved problem, a paper that discusses the impact of solving this problem (derivatives portfolio compression) can be found [here](https://poseidon01.ssrn.com/delivery.php?ID=173022101119066104069084024124124064057072038035075028088075127101004122006005024111124122127028018042026073119104019029013097060013004075058101117086083074115000080085079001122091083005103114006027025067087001080089110082065023117022074089030116069073&EXT=pdf).
 
