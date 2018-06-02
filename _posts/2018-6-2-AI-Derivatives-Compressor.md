@@ -7,6 +7,8 @@ title: My First Post Derivatives Portfolio Compression With Deep Learning (Part 
 
 ![Compression Example](https://raw.githubusercontent.com/kkacquah/kkacquah.github.io/master/images/AI-Derivatives-Compressor/compression.png)
 
+For my first post, I'd like to focus on a very interesting intersection between financial economics and computer science I have been working on for the past semester while working on undergraduate research. This particular juncture is derivatives portfolio compression, a particularily important activity for financial firms looking to decrease their notional liabilities (due to [recent regulatory obligations](https://www.emissions-euets.com/risk-mitigation-techniques-emir/portfolio-compression-emir), a decrease in liabilities results in an increase in the flexibility institutions have to invest in capital.)
+
 For my UROP project for the spring 2018 semester, I have created an Open AI Gym environment in an attempt to open the door for open source the problem of using reinforcement learning to build an automatic agent that finds the optimal policy for compressing a set of derivatives contracts between groups of banks. Given the recent resurgence of financial regulation incentivizing actors within the financial sector to minimize their excess derivative contract notional, devising an artificial intellegence system to automatically minimize this excess over time is certainly a worthwhile endevour.
 
 ## Problem Statement
