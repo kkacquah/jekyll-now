@@ -1,7 +1,7 @@
 ---
 layout: post
 mathjax: true
-title: My First Post Derivatives Portfolio Compression With Deep Learning (Part One)
+title: (My First Post!) Derivatives Portfolio Compression With Deep Learning (Part One)
 
 ---
 For my first post, I'd like to focus on a very interesting intersection between financial economics and computer science I have been working on for the past semester while working on undergraduate research. This particular juncture is derivatives portfolio compression, a particularily important activity for financial firms looking to decrease their notional liabilities (due to [recent regulatory obligations](https://www.emissions-euets.com/risk-mitigation-techniques-emir/portfolio-compression-emir), a decrease in liabilities results in an increase in the flexibility institutions have to invest in capital.)
