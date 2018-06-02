@@ -16,13 +16,13 @@ Perhaps I should define the problem I intend to solve, before providing informat
 First, we must define the following notation, a derivatives market can be modelled as consistenting the following elements:
 
 1. A set of banks $B$ comprised of banks $(b_0,b_1,\dots b_n)$
-1. A set of timesteps $T = (0,1,2,3,4,5,\dots,n)$, each timestep $t$ represents a week during which derivatives trading occurs.
-1. A set of edges that comprise a directed graph $G$, $E = (e_0,e_1, \dots e_n)$ each edge $e_k =(b_i,b_j)$ of weight $w$ represents an debt owed of $w$ million dollars from bank $b_i$ to bank $b_j$.
+1. A set of timesteps $T = (0,1,2,3,4,5,\dots,n)$; each timestep $t \in T$ represents a week during which derivatives trading occurs.
+1. A set of edges that comprise a directed graph $G$, $E = (e_0,e_1, \dots e_n)$; each edge $e_i =(b_j,b_k)$ of weight $w$ represents an debt owed of $w$ million euros from bank $b_j$ to bank $b_k$.
 1. An "arrival" of an edge is defined as one of two events:
-    1. The origination of an edge $e_k =(b_i,b_j)$ that did not exist in prior timesteps.
-    1. The increase of the weight $w$ of an edge $e_k$ that had existed in prior timesteps.
+    1. The origination of an edge $e_i =(b_j,b_k)$ that did not exist in prior timesteps.
+    1. The increase of the weight $w$ of an edge $e_i$ that had existed in prior timesteps.
 1. The total notional of a derivatives contract graph $G$ is equivalent to:
-$$\sum_{\forall i,j \in |B|} w(b_i,b_j)$$
+$$\sum_\limits_{\forall i \in B} \sum_\limits_{\forall j \in B} w(b_i,b_j)$$
 
 Where $w(b_i,b_j)$ is a function that returns the weight $w$ of the edge defined as a derivative contract relationship between bank $i$ and bank $j$.
 
@@ -32,7 +32,7 @@ The precise problem that a intend to allow a reinforcement agent to learn how to
 
 If edges (derivative contracts) that arrive between banks due to a pattern determined by banks within a given financial system, can an agent to learn minimize notional excess over all periods? This can be formalized as solving for:
 
-$$\min \sum_{t \in T} \sum_{\forall i,j \in |B|} w_t(b_i,b_j)$$
+$$\min \sum_{t \in T} \sum_\limits_{\forall i \in B} \sum_\limits_{\forall j \in B}  w_t(b_i,b_j)$$
 
 Where $w_t(b_i,b_j)$ is a function that returns the weight $w_t$ of the edge defined as a derivative contract relationship between bank $i$ and bank $j$ at timestep $t$.
 
@@ -53,9 +53,12 @@ As previously mentioned, minimizing the total notional amongst a set of banks $B
 
 \begin{equation} \label{eq1}
 \begin{split}
-\text{minimize } & \hat{u} \cdot e' \\
-\text{subject to } & Qe' = v \\
+\min & \hat{u} \cdot e'
+
+\text{subject to } & Qe' = v
+
 & 0 \leq e' \leq e
+
 \end{split}
 \end{equation}
 
