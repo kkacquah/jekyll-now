@@ -9,7 +9,7 @@ _Akwaaba_ (Welcome), readers of my newly minted blog. My name is Kenneth Acquah 
 
 _One of the less agonizing images of my racing for my school:_
 
-![Me running](https://raw.githubusercontent.com/kkacquah/kkacquah.github.io/master/images/me_running.png =250x250)
+![Me running](https://raw.githubusercontent.com/kkacquah/kkacquah.github.io/master/images/me_running.png)
 
 ### Contact me
 
