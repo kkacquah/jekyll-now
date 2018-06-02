@@ -143,6 +143,10 @@ It is also noteworthy that there is a great deal of variation in results amongst
 
 # Next Steps
 
-1. Build a deep learning agent to play in this model, right now the cross entropy agent from the OpenAI Gym package that I am using has quite poor performance; I made this gym enviroment to test architectures with stronger pattern recognition abilities, and I certainly would like to test my environment on such architectures.
+1. Build a deep learning agent trained with my model, as of right now the cross entropy agent from the OpenAI Gym package that I am using has quite poor performance; I made this gym enviroment to test architectures with stronger pattern recognition abilities, and I certainly would like to test my environment on such architectures.
 
-1. I have been playing quite a bit with the idea of sending the reinforcement learning agent information about only portions of the singular value decompisition of the "current state adjacency matrix". This would help accentuate patterns within the adjacency matrix amongst banks with very distinct trading patterns. Once I am able to begin to work more seriously on using a deep learning architecture for policy discovery this will definitly be the first mutation of the very noisy adjacency matrix I will try.
+1. I have been playing quite a bit with the idea of sending the reinforcement learning agent information about only portions of the singular value decompisition of the "current state adjacency matrix" (such as its [SVD](https://en.wikipedia.org/wiki/Singular-value_decomposition)). This would help accentuate patterns within the adjacency matrix amongst banks with very distinct trading patterns. Once I am able to begin to work more seriously on using a deep learning architecture for policy discovery this will definitly be the first mutation of the very noisy adjacency matrix that I will try.
+
+# Codebase
+
+The Open AI Gym I built, and the random agents I used to test it is all public [here](https://github.com/kkacquah/Continuous-AI-Derivatives-Compressor) on my github.
