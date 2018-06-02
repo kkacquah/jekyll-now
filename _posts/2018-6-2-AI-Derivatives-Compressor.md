@@ -15,14 +15,14 @@ Perhaps I should define the problem I intend to solve, before providing informat
 
 First, we must define the following notation, a derivatives market can be modelled as consistenting the following elements:
 
-1. A set of banks $B$ comprised of banks $(b_0,b_1,\dots b_n)$
+1. A set of banks $B$ comprised of banks $(b_0,b_1,\dots b_n)$.
 1. A set of timesteps $T = (0,1,2,3,4,5,\dots,n)$; each timestep $t \in T$ represents a week during which derivatives trading occurs.
 1. A set of edges that comprise a directed graph $G$, $E = (e_0,e_1, \dots e_n)$; each edge $e_i =(b_j,b_k)$ of weight $w$ represents an debt owed of $w$ million euros from bank $b_j$ to bank $b_k$.
 1. An "arrival" of an edge is defined as one of two events:
     1. The origination of an edge $e_i =(b_j,b_k)$ that did not exist in prior timesteps.
     1. The increase of the weight $w$ of an edge $e_i$ that had existed in prior timesteps.
 1. The total notional of a derivatives contract graph $G$ is equivalent to:
-$$\sum_\limits_{\forall i \in B} \sum_\limits_{\forall j \in B} w(b_i,b_j)$$
+$$\sum_{\forall i \in B} \sum_{\forall j \in B} w(b_i,b_j)$$
 
 Where $w(b_i,b_j)$ is a function that returns the weight $w$ of the edge defined as a derivative contract relationship between bank $i$ and bank $j$.
 
@@ -32,7 +32,7 @@ The precise problem that a intend to allow a reinforcement agent to learn how to
 
 If edges (derivative contracts) that arrive between banks due to a pattern determined by banks within a given financial system, can an agent to learn minimize notional excess over all periods? This can be formalized as solving for:
 
-$$\min \sum_{t \in T} \sum_\limits_{\forall i \in B} \sum_\limits_{\forall j \in B}  w_t(b_i,b_j)$$
+$$\min \sum_{t \in T} \sum_{\forall i \in B} \sum_{\forall j \in B}  w_t(b_i,b_j)$$
 
 Where $w_t(b_i,b_j)$ is a function that returns the weight $w_t$ of the edge defined as a derivative contract relationship between bank $i$ and bank $j$ at timestep $t$.
 
@@ -51,16 +51,13 @@ The reward structure of this problem is quite simple, our agent will recieve a r
 
 As previously mentioned, minimizing the total notional amongst a set of banks $B$ and their respective edges $E$ while maintaining the amount owed from each bank to every other is a solved problem. It can be solved using the following linear programming problem:
 
-\begin{equation} \label{eq1}
+$$\label{eq1}
 \begin{split}
-\min & \hat{u} \cdot e'
-
-\text{subject to } & Qe' = v
-
+\min & \hat{u} \cdot e' \\
+\text{subject to } & Qe' = v \\
 & 0 \leq e' \leq e
-
 \end{split}
-\end{equation}
+$$
 
 Where $\hat{u}$ is a vector of all 1's, $e'$ is the set of edges that would minimize total notional, $Q$ is an incidence matrix of our derivatives contract graph $G$ and $v$ is a vector representation of the total degree of each bank (which represents underlying value on each banks balance sheet).
 
