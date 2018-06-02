@@ -1,7 +1,8 @@
 ---
 layout: post
-title: My First Post: Derivatives Portfolio Compression using Deep Learning (Part One)
+title: My First Post; Derivatives Portfolio Compression using Deep Learning (Part One)
 ---
+
 # Building a credit derivatives compressor Open AI Gym environment
 
 For my UROP project for the spring 2018 semester, I have created an Open AI Gym environment in an attempt to open the door for open source the problem of using reinforcement learning to build an automatic agent that finds the optimal policy for compressing a set of derivatives contracts between groups of banks. Given the recent resurgence of financial regulation incentivizing actors within the financial sector to minimize their excess derivative contract notional, devising an artificial intellegence system to automatically minimize this excess over time is certainly a worthwhile endevour.
