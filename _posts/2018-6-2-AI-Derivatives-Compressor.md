@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My First Post; Derivatives Portfolio Compression using Deep Learning (Part One)
+title: My First Post\: Derivatives Portfolio Compression using Deep Learning (Part One)
 ---
 
 # Building a credit derivatives compressor Open AI Gym environment
