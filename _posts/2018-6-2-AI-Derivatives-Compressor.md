@@ -1,6 +1,8 @@
 ---
 layout: post
+mathjax: true
 title: My First Post Derivatives Portfolio Compression With Deep Learning (Part One)
+
 ---
 
 ![Compression Example](https://raw.githubusercontent.com/kkacquah/kkacquah.github.io/master/images/AI-Derivatives-Compressor/compression.png)
