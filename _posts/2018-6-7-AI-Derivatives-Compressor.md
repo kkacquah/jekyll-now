@@ -1,4 +1,5 @@
-﻿﻿---layout: post
+﻿﻿---
+layout: post
 mathjax: true
 title: (My First Post!) Derivatives Portfolio Compression With Deep Learning (Part One)
 ---
